@@ -10,15 +10,11 @@ class Settings(BaseSettings):
 
     # ArgoCD Config defaults
     ARGOCD_SERVER: str = "localhost"
-    ARGOCD_PORT: str = "8080"  # ArgoCD is running on 8080
+    ARGOCD_PORT: str = "8080"
     ARGOCD_URL: str = f"{ARGOCD_SERVER}:{ARGOCD_PORT}"
-    ARGOCD_PASSWORD: str = "zvBFWXRxbRAKVsW7%"
+    ARGOCD_PASSWORD: str = "zvBFWXRxbRAKVsW7"
     ARGOCD_USERNAME: str = "admin"
     TOKEN_CACHE_TTL: int = 600
-
-    # ArgoCD settings
-    ARGOCD_API_URL: str = "https://localhost:8080"
-    ARGOCD_AUTH_TOKEN: str = "zvBFWXRxbRAKVsW7%"
 
     model_config = SettingsConfigDict(env_nested_delimiter='__')
 

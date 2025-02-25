@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from my_service.config.config import settings
 from my_service.models.models import HealthCheckResponse
 from my_service.utils.logger import setup_logger
-from my_service.api.v1.argocd import router as argocd_router
+from my_service.api.v1.api import router
 
 logger = setup_logger()
 logger.debug(f"Running with config: {settings}")
@@ -19,8 +19,8 @@ def get_application():
         allow_headers=["*"]
     )
     
-    # Include the ArgoCD router with prefix
-    _app.include_router(argocd_router, prefix="/api/v1")
+    # Include the router
+    _app.include_router(router)
     
     return _app
 
