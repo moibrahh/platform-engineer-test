@@ -7,7 +7,4 @@ resources:
   - namespace.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
   - application.yaml
-  - my-service-application.yaml
 
-# Optional: You can add patches here if you want to customize the ArgoCD installation
-patches: [] 

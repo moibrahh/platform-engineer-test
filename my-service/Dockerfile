@@ -12,7 +12,7 @@ COPY pyproject.toml poetry.toml ./
 RUN poetry config virtualenvs.create false
 
 # Install dependencies
-RUN poetry install --no-dev --no-interaction
+RUN poetry install --only main --no-interaction --no-root
 
 # Copy application code
 COPY my_service/ ./my_service/
@@ -21,4 +21,4 @@ COPY my_service/ ./my_service/
 EXPOSE 9000
 
 # Run the application
-CMD ["poetry", "run", "python", "-m", "my_service.main"]
+CMD ["python", "-m", "my_service.main"]
