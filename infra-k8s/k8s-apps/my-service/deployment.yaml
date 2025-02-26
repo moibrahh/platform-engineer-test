@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: my-service
-        image: localhost:51337/my-service-v1
+        image: my-registry.local:5000/my-service-v1:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 9000
