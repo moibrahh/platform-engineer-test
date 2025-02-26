@@ -8,4 +8,5 @@ resources:
 - deployment.yaml
 - service.yaml
 - ingress.yaml
-- registry-secret.yaml 
+- registry-secret.yaml
+- hosts-configmap.yaml 

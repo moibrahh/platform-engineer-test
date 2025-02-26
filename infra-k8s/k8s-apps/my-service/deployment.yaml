@@ -17,7 +17,7 @@ spec:
       - name: local-registry-secret
       containers:
       - name: my-service
-        image: localhost:51337/my-service:v10
+        image: my-service.local:51337/my-service:v10
         imagePullPolicy: Always
         ports:
         - containerPort: 9000
@@ -26,3 +26,11 @@ spec:
           value: "argocd-server.argocd"
         - name: ARGOCD_PORT
           value: "443"
+        volumeMounts:
+        - name: hosts-volume
+          mountPath: /etc/hosts
+          subPath: hosts
+      volumes:
+      - name: hosts-volume
+        configMap:
+          name: hosts-config

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hosts-config
+  namespace: my-service
+data:
+  hosts: |
+    127.0.0.1 my-service.local 
