@@ -13,6 +13,8 @@ spec:
       labels:
         app: my-service
     spec:
+      imagePullSecrets:
+      - name: registry-secret
       containers:
       - name: my-service
         image: my-registry.local:5000/my-service-v1

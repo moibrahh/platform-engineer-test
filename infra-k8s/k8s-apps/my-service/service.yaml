@@ -4,7 +4,6 @@ metadata:
   name: my-service
   namespace: my-service
 spec:
-  type: ClusterIP
   ports:
   - port: 80
     targetPort: 9000

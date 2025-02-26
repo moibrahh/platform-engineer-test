@@ -9,3 +9,5 @@ resources:
   - application.yaml
   - my-service-application.yaml
 
+# Optional: You can add patches here if you want to customize the ArgoCD installation
+patches: [] 
