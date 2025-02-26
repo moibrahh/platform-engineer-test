@@ -13,6 +13,8 @@ spec:
       labels:
         app: my-service
     spec:
+      imagePullSecrets:
+      - name: registry-secret
       containers:
       - name: my-service
         image: my-registry.local:5000/my-service-v1
@@ -22,4 +24,5 @@ spec:
         - name: ARGOCD_SERVER
           value: "argocd-server.argocd"
         - name: ARGOCD_PORT
-          value: "443" 
+          value: "443"
+      imagePullPolicy: Always 
