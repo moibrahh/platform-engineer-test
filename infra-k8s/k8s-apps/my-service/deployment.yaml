@@ -18,11 +18,8 @@ spec:
         image: my-registry.local:5000/my-service:v0  
         ports:
         - containerPort: 9000
-        volumeMounts:
-        - name: kube-config
-          mountPath: /root/.kube/
-      volumes:
-      - name: kube-config
-        hostPath:
-          path: /root/.kube/
-          type: Directory
+        env:
+        - name: ARGOCD_SERVER
+          value: "argocd-server.argocd"
+        - name: ARGOCD_PORT
+          value: "443"
