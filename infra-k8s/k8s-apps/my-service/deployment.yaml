@@ -15,12 +15,14 @@ spec:
     spec:
       containers:
       - name: my-service
-        image: my-registry.local:5000/my-service-v1:latest
-        imagePullPolicy: Always
+        image: my-registry.local:5000/my-service:v0  
         ports:
         - containerPort: 9000
-        env:
-        - name: ARGOCD_SERVER
-          value: "argocd-server.argocd"
-        - name: ARGOCD_PORT
-          value: "443" 
+        volumeMounts:
+        - name: kube-config
+          mountPath: /root/.kube/
+      volumes:
+      - name: kube-config
+        hostPath:
+          path: /root/.kube/
+          type: Directory
