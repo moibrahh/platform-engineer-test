@@ -13,6 +13,8 @@ spec:
       labels:
         app: my-service
     spec:
+      imagePullSecrets:
+      - name: local-registry-secret
       containers:
       - name: my-service
         image: localhost:51337/my-service:v10
