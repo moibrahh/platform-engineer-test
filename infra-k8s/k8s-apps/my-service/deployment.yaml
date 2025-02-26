@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-service
+  namespace: my-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-service
+  template:
+    metadata:
+      labels:
+        app: my-service
+    spec:
+      containers:
+      - name: my-service
+        image: my-registry.local:5000/my-service-v1
+        ports:
+        - containerPort: 9000
+        env:
+        - name: ARGOCD_SERVER
+          value: "argocd-server.argocd"
+        - name: ARGOCD_PORT
+          value: "443" 
