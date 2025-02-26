@@ -26,7 +26,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/moibrahh/platform-engineer-test.git
-    path: infra-k8s/k8s-apps/my-service
+    path: platform-engineer-test/infra-k8s/k8s-apps/my-service
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
