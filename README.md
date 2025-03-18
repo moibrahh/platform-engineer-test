@@ -1,4 +1,4 @@
-# **Platform Engineer Exam**
+# **Platform Engineer **
 
 ## **Introduction**
 
